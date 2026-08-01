@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Humanity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <h1>🌍 Project Humanity</h1>
+    <p>هر کار خوب، یک تغییر کوچک در جهان است.</p>
+</header>
+
+
+<section class="stats">
+
+    <div class="card">
+        <h2>🌱 ۱۲۵۰</h2>
+        <p>کار خوب امروز</p>
+    </div>
+
+    <div class="card">
+        <h2>📚 ۳۴۰</h2>
+        <p>ساعت آموزش رایگان</p>
+    </div>
+
+    <div class="card">
+        <h2>🐾 ۸۰</h2>
+        <p>کمک به حیوانات</p>
+    </div>
+
+</section>
+
+
+<section class="good">
+    <h2>امروز چه کار خوبی کردی؟</h2>
+
+    <textarea placeholder="کار خوبت را بنویس..."></textarea>
+
+    <button>
+        ثبت کار خوب 🌱
+    </button>
+
+</section>
+
+
+<section class="quote">
+
+    <h2>نقل قول امروز</h2>
+
+    <p>
+        «دنیا با کارهای کوچک انسان‌های زیاد تغییر می‌کند.»
+    </p>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
