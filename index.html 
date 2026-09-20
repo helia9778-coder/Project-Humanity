@@ -1,64 +1,341 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Humanity</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Humiva | هومیوا</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>🌍 Project Humanity</h1>
-    <p>هر کار خوب، یک تغییر کوچک در جهان است.</p>
-</header>
+  <!-- APP -->
+
+  <div class="app">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div class="brand">
+        <div class="logo">H</div>
+
+        <div>
+          <div class="brand-name">Humiva</div>
+          <div class="brand-subtitle">کار خوب را عادی کنیم</div>
+        </div>
+      </div>
+
+      <button class="icon-button" id="profileButton" aria-label="پروفایل">
+        <span>☻</span>
+      </button>
+
+    </header>
 
 
-<section class="stats">
+    <!-- MAIN -->
 
-    <div class="card">
-        <h2>🌱 ۱۲۵۰</h2>
-        <p>کار خوب امروز</p>
-    </div>
-
-    <div class="card">
-        <h2>📚 ۳۴۰</h2>
-        <p>ساعت آموزش رایگان</p>
-    </div>
-
-    <div class="card">
-        <h2>🐾 ۸۰</h2>
-        <p>کمک به حیوانات</p>
-    </div>
-
-</section>
+    <main class="content">
 
 
-<section class="good">
-    <h2>امروز چه کار خوبی کردی؟</h2>
+      <!-- HOME -->
 
-    <textarea placeholder="کار خوبت را بنویس..."></textarea>
+      <section id="homePage" class="page active">
 
-    <button>
-        ثبت کار خوب 🌱
-    </button>
+        <div class="welcome">
 
-</section>
+          <div>
+            <p class="small-text">سلام 👋</p>
+            <h1>امروز چه کار خوبی<br>می‌تونی انجام بدی؟</h1>
+          </div>
 
+          <div class="plant">🌱</div>
 
-<section class="quote">
-
-    <h2>نقل قول امروز</h2>
-
-    <p>
-        «دنیا با کارهای کوچک انسان‌های زیاد تغییر می‌کند.»
-    </p>
-
-</section>
+        </div>
 
 
-<script src="script.js"></script>
+        <!-- DAILY ACTION -->
+
+        <div class="daily-card">
+
+          <div class="daily-top">
+
+            <span class="daily-label">کار خوب امروز</span>
+
+            <span class="sparkle">✦</span>
+
+          </div>
+
+          <h2 id="dailyAction">
+            امروز برای کسی که نیاز به کمک دارد،
+            چند دقیقه بیشتر وقت بگذار.
+          </h2>
+
+          <button class="primary-button" id="completeDaily">
+            انجامش دادم ✓
+          </button>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+          <div class="stat-card">
+            <span>🌱</span>
+            <strong id="goodCount">12</strong>
+            <small>کار خوب</small>
+          </div>
+
+          <div class="stat-card">
+            <span>🔥</span>
+            <strong id="streakCount">4</strong>
+            <small>روز پیوسته</small>
+          </div>
+
+          <div class="stat-card">
+            <span>✨</span>
+            <strong id="impactCount">7</strong>
+            <small>الهام گرفته</small>
+          </div>
+
+        </div>
+
+
+        <!-- FEED TITLE -->
+
+        <div class="section-title">
+
+          <div>
+            <h2>کارهای خوب مردم</h2>
+            <p>شاید کار بعدی از همین‌جا شروع شود.</p>
+          </div>
+
+          <button class="text-button" id="refreshFeed">
+            تازه‌سازی
+          </button>
+
+        </div>
+
+
+        <!-- FEED -->
+
+        <div id="feed" class="feed"></div>
+
+      </section>
+
+
+      <!-- ADD GOOD ACTION -->
+
+      <section id="addPage" class="page">
+
+        <div class="page-heading">
+
+          <button class="back-button" data-page="homePage">
+            ←
+          </button>
+
+          <div>
+            <h1>یک کار خوب ثبت کن</h1>
+            <p>لازم نیست کار بزرگی باشد.</p>
+          </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+          <label for="goodAction">
+            چه کار خوبی انجام دادی؟
+          </label>
+
+          <textarea
+            id="goodAction"
+            maxlength="280"
+            placeholder="مثلاً: امروز برای همکارم که روز سختی داشت، قهوه گرفتم..."
+          ></textarea>
+
+          <div class="character-count">
+            <span id="charCount">0</span>/280
+          </div>
+
+
+          <div class="privacy-box">
+
+            <div class="privacy-icon">
+              🕊️
+            </div>
+
+            <div>
+              <strong>می‌خواهی ناشناس منتشر شود؟</strong>
+              <p>
+                گاهی کار خوب فقط برای انجام دادن است،
+                نه برای دیده شدن.
+              </p>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="anonymousToggle">
+              <span></span>
+            </label>
+
+          </div>
+
+
+          <button class="primary-button large" id="publishButton">
+            ثبت کار خوب 🌱
+          </button>
+
+        </div>
+
+
+        <div class="quote-box">
+
+          <span>❝</span>
+
+          <p>
+            هیچ کار خوبی، هرچقدر کوچک، بی‌اثر نیست.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- QUOTES -->
+
+      <section id="quotesPage" class="page">
+
+        <div class="page-heading">
+
+          <div>
+            <h1>کلمات خوب</h1>
+            <p>چیزی برای فکر کردن، نه فقط خواندن.</p>
+          </div>
+
+        </div>
+
+        <div id="quotesList" class="quotes-list"></div>
+
+      </section>
+
+
+      <!-- PROFILE -->
+
+      <section id="profilePage" class="page">
+
+        <div class="profile-header">
+
+          <div class="avatar">
+            H
+          </div>
+
+          <h1>دوست هومیوا</h1>
+
+          <p>هر روز، یک قدم کوچک.</p>
+
+        </div>
+
+
+        <div class="profile-stats">
+
+          <div>
+            <strong id="profileGood">12</strong>
+            <span>کار خوب</span>
+          </div>
+
+          <div>
+            <strong>4</strong>
+            <span>روز پیوسته</span>
+          </div>
+
+          <div>
+            <strong>7</strong>
+            <span>الهام</span>
+          </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+          <button>
+            <span>♿</span>
+            <span>دسترس‌پذیری</span>
+            <span>›</span>
+          </button>
+
+          <button>
+            <span>🔔</span>
+            <span>اعلان‌ها</span>
+            <span>›</span>
+          </button>
+
+          <button>
+            <span>🛡️</span>
+            <span>امنیت و حریم خصوصی</span>
+            <span>›</span>
+          </button>
+
+          <button>
+            <span>⚙️</span>
+            <span>تنظیمات</span>
+            <span>›</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+
+    <nav class="bottom-nav">
+
+      <button class="nav-item active" data-page="homePage">
+        <span>⌂</span>
+        <small>خانه</small>
+      </button>
+
+      <button class="nav-item add-nav" data-page="addPage">
+        <span>＋</span>
+        <small>کار خوب</small>
+      </button>
+
+      <button class="nav-item" data-page="quotesPage">
+        <span>✦</span>
+        <small>نقل‌قول</small>
+      </button>
+
+      <button class="nav-item" data-page="profilePage">
+        <span>☻</span>
+        <small>من</small>
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <!-- TOAST -->
+
+  <div id="toast" class="toast">
+    <span>🌱</span>
+    <p></p>
+  </div>
+
+
+  <script src="app.js"></script>
 
 </body>
 </html>
